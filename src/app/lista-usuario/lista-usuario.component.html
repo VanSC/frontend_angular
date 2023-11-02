@@ -1,0 +1,22 @@
+<div *ngIf="isLoggedIn">
+  <h1>Lista de Usuarios</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre de Usuario</th>
+        <th>Correo Electrónico</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of listUsuario">
+        <td>{{ usuario.username }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>
+          <button (click)="usuario._id && eliminarUsuario(usuario._id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h2 style="color: red;" *ngIf="!isLoggedIn">Es necesario iniciar sesion para tener acceso!!</h2>
